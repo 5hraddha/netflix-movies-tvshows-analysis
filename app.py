@@ -134,6 +134,13 @@ st.dataframe(filtered_df)
 # -------------------------------------------------------------------------------------------------
 # Set heading # 2
 st.header(":tv: Overall trend of content available on Netflix")
+# Normalize histograms by percent if checked
+norm = st.checkbox("Do you want to normalize data?", False)
+if norm:
+    hnorm = "percent"
+else:
+    hnorm = None
+
 fig_release_year_vs_count_of_contents = px.histogram(
     netflix_data,
     x="release_year",
@@ -142,6 +149,7 @@ fig_release_year_vs_count_of_contents = px.histogram(
     labels={"type": "Types of Content on Netflix"},
     color_discrete_map={"Movie": "DodgerBlue", "TV Show": "Red"},
     barmode="overlay",
+    histnorm=hnorm,
 )
 fig_release_year_vs_count_of_contents.update_layout(yaxis_title="Number of Releases")
 fig_release_year_vs_count_of_contents.update_layout(xaxis_title="Year of Release")
