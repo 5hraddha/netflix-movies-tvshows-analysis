@@ -134,7 +134,7 @@ st.dataframe(filtered_df)
 # -------------------------------------------------------------------------------------------------
 # Set heading # 2
 st.header(":tv: Overall trend of content available on Netflix")
-fig_release_year_vs_no_of_movies = px.histogram(
+fig_release_year_vs_count_of_contents = px.histogram(
     netflix_data,
     x="release_year",
     color="type",
@@ -143,19 +143,48 @@ fig_release_year_vs_no_of_movies = px.histogram(
     color_discrete_map={"Movie": "DodgerBlue", "TV Show": "Red"},
     barmode="overlay",
 )
-fig_release_year_vs_no_of_movies.update_layout(yaxis_title="Number of Releases")
-fig_release_year_vs_no_of_movies.update_layout(xaxis_title="Year of Release")
+fig_release_year_vs_count_of_contents.update_layout(yaxis_title="Number of Releases")
+fig_release_year_vs_count_of_contents.update_layout(xaxis_title="Year of Release")
 st.plotly_chart(
-    fig_release_year_vs_no_of_movies, theme="streamlit", use_container_width=True
+    fig_release_year_vs_count_of_contents, theme="streamlit", use_container_width=True
 )
 
 # -------------------------------------------------------------------------------------------------
 # Set heading # 3
 st.header(":tv: Popularity of different rating categories among Netflix subscribers")
-
+fig_rating_vs_count_of_contents = px.histogram(
+    netflix_data,
+    x="rating",
+    color="type",
+    title="Distribution of number of Movies and TV shows based on their ratings",
+    labels={"type": "Types of Content on Netflix"},
+    color_discrete_map={"Movie": "DodgerBlue", "TV Show": "Red"},
+    barmode="overlay",
+)
+fig_rating_vs_count_of_contents.update_layout(yaxis_title="Number of movies / TV Shows")
+fig_rating_vs_count_of_contents.update_layout(xaxis_title="TV Ratings")
+st.plotly_chart(
+    fig_rating_vs_count_of_contents, theme="streamlit", use_container_width=True
+)
 # -------------------------------------------------------------------------------------------------
 # Set heading # 4
 st.header(":tv: Growth and expansion of the platform's library")
+fig_year_added_vs_count_of_contents = px.histogram(
+    netflix_data,
+    x="year_added",
+    color="type",
+    title="Frequency of content additions to Netflix over time",
+    labels={"type": "Types of Content on Netflix"},
+    color_discrete_map={"Movie": "DodgerBlue", "TV Show": "Red"},
+    barmode="overlay",
+)
+fig_year_added_vs_count_of_contents.update_layout(
+    yaxis_title="Number of Movies / TV Show"
+)
+fig_year_added_vs_count_of_contents.update_layout(xaxis_title="Year added to Netflix")
+st.plotly_chart(
+    fig_year_added_vs_count_of_contents, theme="streamlit", use_container_width=True
+)
 
 # -------------------------------------------------------------------------------------------------
 # Set heading # 5
