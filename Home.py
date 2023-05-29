@@ -4,7 +4,7 @@ import streamlit as st
 # -------------------------------------------------------------------------------------------------
 # Page Configuration
 st.set_page_config(
-    page_title="Netflix Content Trend Analysisl", page_icon=":bar_chart:", layout="wide"
+    page_title="Netflix Content Trend Analysisl", page_icon=":tv:", layout="wide"
 )
 
 # -------------------------------------------------------------------------------------------------
