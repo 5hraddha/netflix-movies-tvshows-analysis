@@ -60,7 +60,9 @@ streamlit run Home.py
 
 4. Navigate to `http://0.0.0.0:10000` in the web browser to see the web app.
 
-## Recorded Demo
+## Recorded Demo  
+https://github.com/5hraddha/netflix-movies-tvshows-analysis/assets/27571141/b96a5334-7f85-4756-bf7f-dc095008b7bf
+
 
 ## Live Web App
 
