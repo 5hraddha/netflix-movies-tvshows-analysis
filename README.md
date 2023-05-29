@@ -40,6 +40,26 @@ The project goal is to explore the Netflix dataset to gain insights into the ove
 
 ## Steps to run the Web App locally
 
+1. Clone the Github Repository:
+
+```shell
+git clone https://github.com/5hraddha/netflix-movies-tvshows-analysis.git
+```
+
+2. Make sure that you are in the root directory of the cloned repository - `netflix-movies-tvshows-analysis`. Install all the libraries by running:
+
+```shell
+pip install -r requirements.txt
+```
+
+3. Run the interactive web app locally by running:
+
+```shell
+streamlit run Home.py
+```
+
+4. Navigate to `http://0.0.0.0:10000` in the web browser to see the web app.
+
 ## Recorded Demo
 
 ## Live Web App
